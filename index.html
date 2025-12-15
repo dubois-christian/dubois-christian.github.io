@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DuBois IT Security Services</title>
+  <meta name="description" content="Small-business IT security setup, endpoint hardening, and ongoing maintenance." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#111a2e;
+      --panel2:#0f1730;
+      --text:#eaf0ff;
+      --muted:#b9c4e6;
+      --brand:#7aa2ff;
+      --brand2:#5bf0c9;
+      --danger:#ff6b6b;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(122,162,255,.20), transparent 55%),
+                  radial-gradient(1000px 500px at 90% 15%, rgba(91,240,201,.12), transparent 60%),
+                  radial-gradient(900px 500px at 50% 90%, rgba(122,162,255,.10), transparent 55%),
+                  var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Nav */
+    header{
+      position:sticky; top:0; z-index:10;
+      background: rgba(11,18,32,.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: var(--shadow);
+    }
+    nav ul{display:flex; gap:16px; list-style:none; padding:0; margin:0; flex-wrap:wrap}
+    nav a{color:var(--muted); font-weight:600; font-size:14px; padding:8px 10px; border-radius:12px}
+    nav a:hover{color:var(--text); background: rgba(255,255,255,.06)}
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:14px;
+      background: linear-gradient(135deg, rgba(122,162,255,.95), rgba(91,240,201,.85));
+      color:#07101f;
+      font-weight:800;
+      border:0;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    /* Hero */
+    .hero{padding:56px 0 28px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(17,26,46,.92), rgba(15,23,48,.92));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    h1{margin:0 0 10px; font-size:40px; line-height:1.15}
+    .sub{color:var(--muted); font-size:16px; margin:0 0 16px}
+    .pillRow{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px}
+    .pill{
+      border:1px solid var(--border);
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      background: rgba(255,255,255,.04);
+    }
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .ghost{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      color:var(--text);
+      background: rgba(255,255,255,.05);
+      font-weight:700;
+      cursor:pointer;
+    }
+    .ghost:hover{background: rgba(255,255,255,.08)}
+
+    /* Mini stats */
+    .stats{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .stat{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .stat b{display:block; font-size:18px; margin-bottom:3px}
+    .stat span{color:var(--muted); font-size:13px}
+
+    /* Sections */
+    section{padding:28px 0}
+    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px}
+    h2{margin:0; font-size:22px}
+    .hint{margin:0; color:var(--muted); font-size:14px}
+
+    .grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
+    .grid2{display:grid; grid-template-columns:repeat(2, 1fr); gap:14px}
+
+    .svc h3{margin:0 0 8px; font-size:16px}
+    .svc p{margin:0 0 12px; color:var(--muted); font-size:14px}
+    .svc ul{margin:0; padding-left:18px; color:var(--muted); font-size:14px}
+    .svc li{margin:6px 0}
+
+    .price{
+      display:flex; align-items:baseline; justify-content:space-between;
+      gap:12px;
+      margin:12px 0 8px;
+      padding-top:12px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .price b{color:var(--text); font-size:18px}
+
+    .badge{
+      display:inline-flex; align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(122,162,255,.12);
+      color: var(--text);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    /* Process */
+    .steps{display:grid; grid-template-columns:repeat(4, 1fr); gap:14px}
+    .step b{display:block; margin-bottom:6px}
+    .step p{margin:0; color:var(--muted); font-size:14px}
+
+    /* FAQ */
+    details{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:12px 14px;
+      background: rgba(255,255,255,.04);
+    }
+    details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:800}
+    details p{margin:10px 0 0; color:var(--muted); font-size:14px}
+
+    /* Contact */
+    form{display:grid; gap:10px}
+    label{font-size:13px; color:var(--muted); font-weight:700}
+    input, textarea{
+      width:100%;
+      padding:11px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.20);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .note{color:var(--muted); font-size:12px; margin:10px 0 0}
+
+    footer{padding:26px 0 34px; color:var(--muted); font-size:13px}
+    .fineprint{border-top:1px solid var(--border); padding-top:14px; margin-top:14px}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .heroGrid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr;}
+      h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          DuBois <span style="color:var(--muted)">IT Security Services</span>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#contact">Request a quote</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap heroGrid">
+        <div class="card">
+          <span class="badge">Small-business security hygiene</span>
+          <h1>Practical IT security setups that reduce risk without breaking your workflows.</h1>
+          <p class="sub">I help small businesses and professionals strengthen endpoints, accounts, and backups. Clear scope. No hype. No "compliance certifications."</p>
+
+          <div class="pillRow" aria-label="Highlights">
+            <span class="pill">Endpoint hardening</span>
+            <span class="pill">MFA + account cleanup</span>
+            <span class="pill">Backups you can restore</span>
+            <span class="pill">Documentation included</span>
+          </div>
+
+          <div class="heroActions">
+            <a class="cta" href="#pricing">See packages</a>
+            <a class="ghost" href="#services">What I do</a>
+            <a class="ghost" href="#contact">Contact</a>
+          </div>
+
+          <p class="note">Service area: Des Moines metro (on-site) + remote support where appropriate.</p>
+        </div>
+
+        <aside class="card" aria-label="Quick facts">
+          <h2 style="margin:0 0 10px">Typical outcomes</h2>
+          <div class="stats">
+            <div class="stat"><b>MFA enabled</b><span>Stronger logins, fewer takeovers</span></div>
+            <div class="stat"><b>Admin minimized</b><span>Less malware damage potential</span></div>
+            <div class="stat"><b>Device encrypted</b><span>Lost laptop ≠ data breach</span></div>
+            <div class="stat"><b>Backups validated</b><span>Restore tests, not hope</span></div>
+          </div>
+          <div style="margin-top:14px; border-top:1px solid var(--border); padding-top:14px">
+            <p class="hint" style="margin:0">Not sure what you need?</p>
+            <a class="ghost" style="display:inline-flex; margin-top:10px" href="#contact">Request a quick assessment</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Services</h2>
+          <p class="hint">Focused on baseline risk reduction for small organizations.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card svc">
+            <h3>Security Baseline Setup</h3>
+            <p>Hardening for Windows devices and core accounts. Best for 1–10 devices.</p>
+            <ul>
+              <li>Microsoft Defender configuration</li>
+              <li>BitLocker + recovery key handling</li>
+              <li>Remove unnecessary local admins</li>
+              <li>Browser hardening + updates</li>
+              <li>Password manager + secure sharing</li>
+            </ul>
+            <div class="price"><span>Typical</span><b>$250–$600</b></div>
+          </div>
+
+          <div class="card svc">
+            <h3>Identity & MFA Hardening</h3>
+            <p>Lock down logins to reduce account takeovers.</p>
+            <ul>
+              <li>MFA enforcement (Microsoft / Google / vendor portals)</li>
+              <li>Account audit + cleanup</li>
+              <li>Windows Hello for Business setup (where supported)</li>
+              <li>Secure recovery options</li>
+              <li>Admin role review (small-scale)</li>
+            </ul>
+            <div class="price"><span>Typical</span><b>$150–$450</b></div>
+          </div>
+
+          <div class="card svc">
+            <h3>Backup & Restore Readiness</h3>
+            <p>Backups that can actually be restored when it matters.</p>
+            <ul>
+              <li>3-2-1 backup plan selection</li>
+              <li>Cloud backup setup and validation</li>
+              <li>Local + offline copy options</li>
+              <li>Quarterly restore test</li>
+              <li>Simple runbook/documentation</li>
+            </ul>
+            <div class="price"><span>Typical</span><b>$200–$500</b></div>
+          </div>
+
+          <div class="card svc">
+            <h3>Small Office Device & Network Cleanup</h3>
+            <p>Stabilize the mess: inventory, updates, Wi‑Fi, access, and shared resources.</p>
+            <ul>
+              <li>Device inventory + basic asset tracking</li>
+              <li>Patch/update verification</li>
+              <li>Secure Wi‑Fi setup (WPA2/3, guest network)</li>
+              <li>Printer/share cleanup</li>
+              <li>SOHO firewall review (scope-limited)</li>
+            </ul>
+            <div class="price"><span>Rate</span><b>$75–$125/hr</b></div>
+          </div>
+
+          <div class="card svc">
+            <h3>Security Awareness (Practical)</h3>
+            <p>Non-cringey training focused on the scams your team actually sees.</p>
+            <ul>
+              <li>Phishing patterns + red flags</li>
+              <li>Text/call scams and vendor impersonation</li>
+              <li>Safe file sharing + password handling</li>
+              <li>Incident steps: who to call, what to save</li>
+              <li>Short checklist + poster for the office</li>
+            </ul>
+            <div class="price"><span>Typical</span><b>$150–$350</b></div>
+          </div>
+
+          <div class="card svc">
+            <h3>Ongoing Maintenance</h3>
+            <p>Monthly/quarterly check-ins to keep controls in place as things change.</p>
+            <ul>
+              <li>Account and device spot checks</li>
+              <li>Backup verification</li>
+              <li>New-hire / offboarding checklist</li>
+              <li>Quarterly security report (simple)</li>
+              <li>Priority support channel</li>
+            </ul>
+            <div class="price"><span>Typical</span><b>$100–$300/mo</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Packages</h2>
+          <p class="hint">Transparent scope. Add-ons available as hourly work.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3 style="margin:0 0 8px">Starter</h3>
+            <p class="hint" style="margin:0 0 14px">Best for individuals and very small offices.</p>
+            <div class="price"><span>Total</span><b>$299</b></div>
+            <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:14px">
+              <li>MFA enabled for key accounts</li>
+              <li>Baseline endpoint hardening (1 device)</li>
+              <li>Password manager setup</li>
+              <li>Basic backup plan</li>
+              <li>Summary checklist delivered</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border:1px solid rgba(91,240,201,.35)">
+            <div class="badge" style="background: rgba(91,240,201,.14)">Most popular</div>
+            <h3 style="margin:10px 0 8px">Business Baseline</h3>
+            <p class="hint" style="margin:0 0 14px">The right starting point for 2–10 devices.</p>
+            <div class="price"><span>Total</span><b>$599</b></div>
+            <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:14px">
+              <li>MFA + account audit (up to 10 users)</li>
+              <li>Hardening for up to 5 devices</li>
+              <li>BitLocker enabled (where applicable)</li>
+              <li>Backup setup + quick restore test</li>
+              <li>Documentation + simple runbook</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 8px">Baseline + Maintenance</h3>
+            <p class="hint" style="margin:0 0 14px">Ongoing help to keep it from drifting.</p>
+            <div class="price"><span>Setup + monthly</span><b>$599 + $149/mo</b></div>
+            <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:14px">
+              <li>Everything in Business Baseline</li>
+              <li>Monthly spot checks (accounts/devices)</li>
+              <li>Backup verification</li>
+              <li>Quarterly mini-report</li>
+              <li>Priority support response</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="note">Prices shown are typical starting points. Final quotes depend on device count, account types, and on-site needs.</p>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>How it works</h2>
+          <p class="hint">Fast, documented, and designed not to interrupt work.</p>
+        </div>
+
+        <div class="steps">
+          <div class="card step">
+            <b>1) Quick assessment</b>
+            <p>15–30 minutes to understand device count, accounts, and priorities. You get a written scope.</p>
+          </div>
+          <div class="card step">
+            <b>2) Baseline implementation</b>
+            <p>Hardening + MFA + backup work. I document changes and recovery steps.</p>
+          </div>
+          <div class="card step">
+            <b>3) Validation</b>
+            <p>Basic checks: encryption status, MFA working, backup completes, and a restore test (when applicable).</p>
+          </div>
+          <div class="card step">
+            <b>4) Handoff</b>
+            <p>You receive a checklist, credentials handoff plan, and recommendations for next steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>FAQ</h2>
+          <p class="hint">Clear boundaries to keep expectations realistic.</p>
+        </div>
+
+        <details>
+          <summary>Do you provide compliance certification (HIPAA/PCI/etc.)?</summary>
+          <p>No. I implement technical best practices and provide documentation. For formal compliance attestation, you should work with a qualified compliance professional/auditor.</p>
+        </details>
+        <details>
+          <summary>Do you offer penetration testing?</summary>
+          <p>Not as a service. If you need a formal penetration test, I can help you prepare and refer you to a qualified provider.</p>
+        </details>
+        <details>
+          <summary>What do you need from me to start?</summary>
+          <p>A list of devices, who manages your email/accounts, and admin access where required. If you don’t know, that’s normal—I'll walk you through it.</p>
+        </details>
+        <details>
+          <summary>Do you do on-site work?</summary>
+          <p>Yes, for Des Moines metro clients. Remote support is also available depending on the scope.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Request a quote</h2>
+          <p class="hint">Send the basics and I’ll respond with a clear scope and price.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <form id="contactForm">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="company">Company (optional)</label>
+                <input id="company" name="company" autocomplete="organization" placeholder="Business name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+              </div>
+              <div>
+                <label for="message">What do you need help with?</label>
+                <textarea id="message" name="message" placeholder="Devices/users count, what tools you use (Microsoft 365/Google/etc.), and what’s worrying you." required></textarea>
+              </div>
+              <button class="cta" type="submit">Generate email draft</button>
+              <p class="note">This button opens your email app with a pre-filled message (no data is stored on this site).</p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 10px">Direct contact</h3>
+            <p class="hint" style="margin:0 0 16px">Replace these placeholders with your real info.</p>
+            <div style="display:grid; gap:10px">
+              <div class="stat"><b>Email</b><span><a href="mailto:christian.dubois@grandview.edu">christian.dubois@grandview.edu</a></span></div>
+              <div class="stat"><b>Phone</b><span><a href="tel:+17126355482">(712) 635-5482</a></span></div>
+              <div class="stat"><b>LinkedIn</b><span><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">linkedin.com/in/your-profile</a></span></div>
+            </div>
+
+            <div class="fineprint">
+              <p style="margin:0 0 8px; font-weight:800">Scope statement</p>
+              <p class="hint" style="margin:0">
+                Services focus on endpoint, identity, and backup hardening. No guarantees of breach prevention. No legal/compliance certification.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+        <div>© <span id="year"></span> DuBois IT Security Services</div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="fineprint">
+        <div class="hint">This site is a marketing overview only. Final scope and pricing are defined in a written agreement.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mailto generator (no backend required)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent(`Quote request${company ? ' - ' + company : ''}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Company: ${company || 'N/A'}\n` +
+        `Reply-to: ${email}\n\n` +
+        `Request:\n${message}\n\n` +
+        `Preferred contact method/time:`
+      );
+
+      // Replace this with your business email if different
+      const to = 'christian.dubois@grandview.edu';
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
