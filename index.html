@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DuBois IT Security Services</title>
-  <meta name="description" content="Small-business IT security setup, endpoint hardening, and ongoing maintenance." />
+  <title>DuBois Home & Small Business IT Security | Des Moines</title>
+  <meta name="description" content="IT security for small businesses and home offices in Des Moines: MFA, endpoint hardening, home Wi-Fi security, backups, and ongoing maintenance." />
   <style>
     :root{
       --bg:#0b1220;
@@ -14,7 +14,6 @@
       --muted:#b9c4e6;
       --brand:#7aa2ff;
       --brand2:#5bf0c9;
-      --danger:#ff6b6b;
       --border:rgba(255,255,255,.12);
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 18px;
@@ -34,52 +33,28 @@
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
 
-    /* Nav */
     header{
       position:sticky; top:0; z-index:10;
       background: rgba(11,18,32,.75);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-    }
-    .brand{
-      display:flex; gap:10px; align-items:center;
-      font-weight:700;
-      letter-spacing:.2px;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: var(--shadow);
-    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
+    .brand{display:flex; gap:10px; align-items:center; font-weight:700; letter-spacing:.2px;}
+    .logo{width:34px; height:34px; border-radius:12px; background: linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow: var(--shadow);}
     nav ul{display:flex; gap:16px; list-style:none; padding:0; margin:0; flex-wrap:wrap}
     nav a{color:var(--muted); font-weight:600; font-size:14px; padding:8px 10px; border-radius:12px}
     nav a:hover{color:var(--text); background: rgba(255,255,255,.06)}
     .cta{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
-      border-radius:14px;
+      padding:10px 14px; border-radius:14px;
       background: linear-gradient(135deg, rgba(122,162,255,.95), rgba(91,240,201,.85));
-      color:#07101f;
-      font-weight:800;
-      border:0;
-      box-shadow: var(--shadow);
-      cursor:pointer;
-      font-size:14px;
-      white-space:nowrap;
+      color:#07101f; font-weight:800; border:0; box-shadow: var(--shadow);
+      cursor:pointer; font-size:14px; white-space:nowrap;
     }
 
-    /* Hero */
     .hero{padding:56px 0 28px}
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:22px;
-      align-items:stretch;
-    }
+    .heroGrid{display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch;}
     .card{
       background: linear-gradient(180deg, rgba(17,26,46,.92), rgba(15,23,48,.92));
       border:1px solid var(--border);
@@ -90,39 +65,16 @@
     h1{margin:0 0 10px; font-size:40px; line-height:1.15}
     .sub{color:var(--muted); font-size:16px; margin:0 0 16px}
     .pillRow{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px}
-    .pill{
-      border:1px solid var(--border);
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:999px;
-      font-size:13px;
-      background: rgba(255,255,255,.04);
-    }
+    .pill{border:1px solid var(--border); color:var(--muted); padding:8px 10px; border-radius:999px; font-size:13px; background: rgba(255,255,255,.04);}
     .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .ghost{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      color:var(--text);
-      background: rgba(255,255,255,.05);
-      font-weight:700;
-      cursor:pointer;
-    }
+    .ghost{display:inline-flex; align-items:center; justify-content:center; padding:10px 14px; border-radius:14px; border:1px solid var(--border); color:var(--text); background: rgba(255,255,255,.05); font-weight:700; cursor:pointer;}
     .ghost:hover{background: rgba(255,255,255,.08)}
 
-    /* Mini stats */
     .stats{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    .stat{
-      padding:14px;
-      border-radius:16px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-    }
+    .stat{padding:14px; border-radius:16px; border:1px solid var(--border); background: rgba(255,255,255,.04);}
     .stat b{display:block; font-size:18px; margin-bottom:3px}
     .stat span{color:var(--muted); font-size:13px}
 
-    /* Sections */
     section{padding:28px 0}
     .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px}
     h2{margin:0; font-size:22px}
@@ -136,64 +88,29 @@
     .svc ul{margin:0; padding-left:18px; color:var(--muted); font-size:14px}
     .svc li{margin:6px 0}
 
-    .price{
-      display:flex; align-items:baseline; justify-content:space-between;
-      gap:12px;
-      margin:12px 0 8px;
-      padding-top:12px;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-      font-size:13px;
-    }
+    .price{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:12px 0 8px; padding-top:12px; border-top:1px solid var(--border); color:var(--muted); font-size:13px;}
     .price b{color:var(--text); font-size:18px}
 
-    .badge{
-      display:inline-flex; align-items:center;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(122,162,255,.12);
-      color: var(--text);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
+    .badge{display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px; border:1px solid var(--border); background: rgba(122,162,255,.12); color: var(--text); font-size:12px; font-weight:800; letter-spacing:.2px;}
 
-    /* Process */
     .steps{display:grid; grid-template-columns:repeat(4, 1fr); gap:14px}
     .step b{display:block; margin-bottom:6px}
     .step p{margin:0; color:var(--muted); font-size:14px}
 
-    /* FAQ */
-    details{
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:12px 14px;
-      background: rgba(255,255,255,.04);
-    }
+    details{border:1px solid var(--border); border-radius:16px; padding:12px 14px; background: rgba(255,255,255,.04);}
     details + details{margin-top:10px}
     summary{cursor:pointer; font-weight:800}
     details p{margin:10px 0 0; color:var(--muted); font-size:14px}
 
-    /* Contact */
     form{display:grid; gap:10px}
     label{font-size:13px; color:var(--muted); font-weight:700}
-    input, textarea{
-      width:100%;
-      padding:11px 12px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background: rgba(0,0,0,.20);
-      color:var(--text);
-      outline:none;
-    }
+    input, textarea{width:100%; padding:11px 12px; border-radius:14px; border:1px solid var(--border); background: rgba(0,0,0,.20); color:var(--text); outline:none;}
     textarea{min-height:120px; resize:vertical}
     .note{color:var(--muted); font-size:12px; margin:10px 0 0}
 
     footer{padding:26px 0 34px; color:var(--muted); font-size:13px}
     .fineprint{border-top:1px solid var(--border); padding-top:14px; margin-top:14px}
 
-    /* Responsive */
     @media (max-width: 900px){
       .heroGrid{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
@@ -209,7 +126,7 @@
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>
-          DuBois <span style="color:var(--muted)">IT Security Services</span>
+          DuBois <span style="color:var(--muted)">Home & Small Business Security</span>
         </div>
       </div>
       <nav aria-label="Primary">
@@ -229,37 +146,36 @@
     <section class="hero">
       <div class="wrap heroGrid">
         <div class="card">
-          <span class="badge">Small-business IT security services</span>
-          <h1>Practical IT security setups that reduce risk without breaking your workflows.</h1>
-          <p class="sub">I help small businesses strengthen devices, user accounts, and backups using industry standard practices.
-          Clear scope, practical controls, and documentation you can rely on.
+          <span class="badge">Small Business • Home Office • Home Network</span>
+          <h1>Security basics for small businesses and home offices: strong logins, safer devices, and reliable backups.</h1>
+          <p class="sub">
+            I help small businesses, home offices, and remote professionals in the Des Moines area secure computers, accounts, and home or small-office networks using practical security best practices.
           </p>
 
           <div class="pillRow" aria-label="Highlights">
+            <span class="pill">MFA setup + enforcement</span>
             <span class="pill">Endpoint hardening</span>
-            <span class="pill">MFA + account cleanup</span>
-            <span class="pill">Backups you can restore</span>
-            <span class="pill">Documentation included</span>
+            <span class="pill">Home Wi-Fi security</span>
+            <span class="pill">Backup + restore testing</span>
+            <span class="pill">Simple documentation</span>
           </div>
 
           <div class="heroActions">
-            <a class="cta" href="#pricing">See packages</a>
-            <a class="ghost" href="#services">What I do</a>
+            <a class="cta" href="#pricing">View packages</a>
+            <a class="ghost" href="#services">Services</a>
             <a class="ghost" href="#contact">Contact</a>
           </div>
 
-          <p class="note">
-            Service area: Des Moines metro for on-site work, with remote support available when appropriate.
-          </p>
+          <p class="note">Service area: Des Moines metro for on-site support, with remote services available for small businesses and home offices.</p>
         </div>
 
         <aside class="card" aria-label="Quick facts">
-          <h2 style="margin:0 0 10px">Typical outcomes</h2>
+          <h2 style="margin:0 0 10px">What you get</h2>
           <div class="stats">
-            <div class="stat"><b>MFA enabled</b><span>Stronger logins, fewer takeovers</span></div>
-            <div class="stat"><b>Admin minimized</b><span>Less malware damage potential</span></div>
-            <div class="stat"><b>Device encrypted</b><span>Lost laptop ≠ data breach</span></div>
-            <div class="stat"><b>Backups validated</b><span>Restore tests, not hope</span></div>
+            <div class="stat"><b>Stronger logins</b><span>MFA enabled and recovery set up</span></div>
+            <div class="stat"><b>Safer devices</b><span>Encryption + fewer admin risks</span></div>
+            <div class="stat"><b>Safer Wi-Fi</b><span>Hardened home/office network basics</span></div>
+            <div class="stat"><b>Backup confidence</b><span>Restore tests (not just backups)</span></div>
           </div>
           <div style="margin-top:14px; border-top:1px solid var(--border); padding-top:14px">
             <p class="hint" style="margin:0">Not sure what you need?</p>
@@ -273,83 +189,83 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Services</h2>
-          <p class="hint">Focused on baseline risk reduction for small organizations.</p>
+          <p class="hint">Practical risk reduction for small businesses and home office/home networks.</p>
         </div>
 
         <div class="grid3">
           <div class="card svc">
-            <h3>Security Baseline Setup</h3>
-            <p>Hardening for Windows devices and core accounts. Best for 1–10 devices.</p>
+            <h3>Security Baseline Setup (Windows)</h3>
+            <p>Security hardening for Windows computers used in small businesses and home offices. Best for 1–10 devices.</p>
             <ul>
               <li>Microsoft Defender configuration</li>
-              <li>BitLocker + recovery key handling</li>
+              <li>BitLocker + recovery key handling (where supported)</li>
               <li>Remove unnecessary local admins</li>
-              <li>Browser hardening + updates</li>
+              <li>Browser hardening + update checks</li>
               <li>Password manager + secure sharing</li>
             </ul>
             <div class="price"><span>Typical</span><b>$250–$600</b></div>
           </div>
 
           <div class="card svc">
-            <h3>Identity & MFA Hardening</h3>
-            <p>Lock down logins to reduce account takeovers.</p>
+            <h3>Account & Login Security (MFA)</h3>
+            <p>Secure email and account logins for small teams and home offices to reduce phishing and account takeovers.</p>
             <ul>
               <li>MFA enforcement (Microsoft / Google / vendor portals)</li>
               <li>Account audit + cleanup</li>
-              <li>Windows Hello for Business setup (where supported)</li>
               <li>Secure recovery options</li>
-              <li>Admin role review (small-scale)</li>
+              <li>Basic admin role review (scope-limited)</li>
+              <li>Sign-in hygiene recommendations</li>
             </ul>
             <div class="price"><span>Typical</span><b>$150–$450</b></div>
           </div>
 
           <div class="card svc">
-            <h3>Backup & Restore Readiness</h3>
-            <p>Backups that can actually be restored when it matters.</p>
+            <h3>Backup & Data Recovery Readiness</h3>
+            <p>Backups that can actually be restored after device loss, ransomware, or accidental deletion.</p>
             <ul>
               <li>3-2-1 backup plan selection</li>
               <li>Cloud backup setup and validation</li>
               <li>Local + offline copy options</li>
-              <li>Quarterly restore test</li>
+              <li>Restore test (when applicable)</li>
               <li>Simple runbook/documentation</li>
             </ul>
             <div class="price"><span>Typical</span><b>$200–$500</b></div>
           </div>
 
           <div class="card svc">
-            <h3>Small Office Device & Network Cleanup</h3>
-            <p>Stabilize the mess: inventory, updates, Wi‑Fi, access, and shared resources.</p>
+            <h3>Small Office & Home Network Cleanup</h3>
+            <p>Stabilize and secure small office and home networks: devices, updates, Wi-Fi security, and shared access.</p>
             <ul>
               <li>Device inventory + basic asset tracking</li>
               <li>Patch/update verification</li>
-              <li>Secure Wi‑Fi setup (WPA2/3, guest network)</li>
+              <li>Secure home or office Wi-Fi (WPA2/3, strong passwords, optional guest network)</li>
               <li>Printer/share cleanup</li>
-              <li>SOHO firewall review (scope-limited)</li>
+              <li>SOHO router/firewall basics review (scope-limited)</li>
             </ul>
             <div class="price"><span>Rate</span><b>$75–$125/hr</b></div>
           </div>
 
           <div class="card svc">
-            <h3>Security Awareness (Practical)</h3>
-            <p>Non-cringey training focused on the scams your team actually sees.</p>
+            <h3>Security Awareness for Small Teams</h3>
+            <p>Short, practical training focused on scams and mistakes that commonly impact small businesses and home offices.</p>
             <ul>
               <li>Phishing patterns + red flags</li>
               <li>Text/call scams and vendor impersonation</li>
               <li>Safe file sharing + password handling</li>
-              <li>Incident steps: who to call, what to save</li>
-              <li>Short checklist + poster for the office</li>
+              <li>What to do if something looks wrong</li>
+              <li>One-page checklist for the office</li>
             </ul>
             <div class="price"><span>Typical</span><b>$150–$350</b></div>
           </div>
 
           <div class="card svc">
-            <h3>Ongoing Maintenance</h3>
-            <p>Monthly/quarterly check-ins to keep controls in place as things change.</p>
+            <h3>Ongoing Security Maintenance</h3>
+            <p>Monthly or quarterly check-ins to keep small business and home office security from drifting over time.</p>
             <ul>
               <li>Account and device spot checks</li>
               <li>Backup verification</li>
-              <li>New-hire / offboarding checklist</li>
-              <li>Quarterly security report (simple)</li>
+              <li>New-hire / offboarding checklist (small teams)</li>
+              <li>Quarterly mini-report (simple)</li>
               <li>Priority support channel</li>
             </ul>
             <div class="price"><span>Typical</span><b>$100–$300/mo</b></div>
@@ -362,13 +278,13 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Packages</h2>
-          <p class="hint">Transparent scope. Add-ons available as hourly work.</p>
+          <p class="hint">Clear scope for home offices and small businesses. Add-ons available as hourly work.</p>
         </div>
 
         <div class="grid3">
           <div class="card">
-            <h3 style="margin:0 0 8px">Starter</h3>
-            <p class="hint" style="margin:0 0 14px">Best for individuals and very small offices.</p>
+            <h3 style="margin:0 0 8px">Home Office Starter</h3>
+            <p class="hint" style="margin:0 0 14px">Best for solo professionals and home offices.</p>
             <div class="price"><span>Total</span><b>$299</b></div>
             <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:14px">
               <li>MFA enabled for key accounts</li>
@@ -381,24 +297,24 @@
 
           <div class="card" style="border:1px solid rgba(91,240,201,.35)">
             <div class="badge" style="background: rgba(91,240,201,.14)">Most popular</div>
-            <h3 style="margin:10px 0 8px">Business Baseline</h3>
-            <p class="hint" style="margin:0 0 14px">The right starting point for 2–10 devices.</p>
+            <h3 style="margin:10px 0 8px">Small Business Baseline</h3>
+            <p class="hint" style="margin:0 0 14px">Ideal for small businesses and home offices with 2–10 devices.</p>
             <div class="price"><span>Total</span><b>$599</b></div>
             <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:14px">
               <li>MFA + account audit (up to 10 users)</li>
               <li>Hardening for up to 5 devices</li>
               <li>BitLocker enabled (where applicable)</li>
-              <li>Backup setup + quick restore test</li>
+              <li>Backup setup + restore check</li>
               <li>Documentation + simple runbook</li>
             </ul>
           </div>
 
           <div class="card">
             <h3 style="margin:0 0 8px">Baseline + Maintenance</h3>
-            <p class="hint" style="margin:0 0 14px">Ongoing help to keep it from drifting.</p>
+            <p class="hint" style="margin:0 0 14px">Ongoing help to keep home office and small business security from drifting.</p>
             <div class="price"><span>Setup + monthly</span><b>$599 + $149/mo</b></div>
             <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:14px">
-              <li>Everything in Business Baseline</li>
+              <li>Everything in Small Business Baseline</li>
               <li>Monthly spot checks (accounts/devices)</li>
               <li>Backup verification</li>
               <li>Quarterly mini-report</li>
@@ -407,7 +323,7 @@
           </div>
         </div>
 
-        <p class="note">Prices shown are typical starting points. Final quotes depend on device count, account types, and on-site needs.</p>
+        <p class="note">Prices shown are typical starting points. Final quotes depend on device count, account types, router/Wi-Fi setup, and on-site needs.</p>
       </div>
     </section>
 
@@ -421,19 +337,19 @@
         <div class="steps">
           <div class="card step">
             <b>1) Quick assessment</b>
-            <p>15–30 minutes to understand device count, accounts, and priorities. You get a written scope.</p>
+            <p>15–30 minutes to understand device count, accounts, Wi-Fi/router setup, and priorities. You get a written scope.</p>
           </div>
           <div class="card step">
-            <b>2) Baseline implementation</b>
-            <p>Hardening + MFA + backup work. I document changes and recovery steps.</p>
+            <b>2) Implementation</b>
+            <p>Hardening + MFA + backup + home network hygiene (as scoped). Changes are documented so you’re not dependent on me.</p>
           </div>
           <div class="card step">
             <b>3) Validation</b>
-            <p>Basic checks: encryption status, MFA working, backup completes, and a restore test (when applicable).</p>
+            <p>Checks: encryption status, MFA working, backups completing, Wi-Fi/security settings verified, and a restore check (when applicable).</p>
           </div>
           <div class="card step">
             <b>4) Handoff</b>
-            <p>You receive a checklist, credentials handoff plan, and recommendations for next steps.</p>
+            <p>You receive a checklist, credential recovery steps, and prioritized recommendations for your home office or small business.</p>
           </div>
         </div>
       </div>
@@ -448,25 +364,19 @@
 
         <details>
           <summary>Do you provide compliance certification (HIPAA/PCI/etc.)?</summary>
-          <p>
-            No. Services focus on implementing technical security best practices and providing clear documentation.
-            Formal compliance certification (HIPAA, PCI, etc.) should be completed by a licensed auditor or compliance professional.
-          </p>
+          <p>No. Services focus on implementing technical best practices and providing documentation. Formal compliance attestation should be completed by a licensed auditor or compliance professional.</p>
         </details>
         <details>
           <summary>Do you offer penetration testing?</summary>
-          <p>
-          Pentration testing is not offered as a standalone service.
-          If required, I can help prepare your environment and coordinate with a qualified third-party provider.
-          </p>
+          <p>No. If a formal penetration test is required, I can help you prepare your environment and coordinate with a qualified third-party provider.</p>
         </details>
         <details>
           <summary>What do you need from me to start?</summary>
-          <p>A list of devices, who manages your email/accounts, and admin access where required. If you don’t know, that’s normal—I'll walk you through it.</p>
+          <p>A list of devices, who manages your email/accounts, and admin access where required. If you don’t know, that’s normal—I’ll walk you through it.</p>
         </details>
         <details>
-          <summary>Do you do on-site work?</summary>
-          <p>Yes, for Des Moines metro clients. Remote support is also available depending on the scope.</p>
+          <summary>Do you provide on-site support for homes and small offices?</summary>
+          <p>Yes. On-site support is available for homes and small offices in the Des Moines metro area. Remote support is also available depending on the service.</p>
         </details>
       </div>
     </section>
@@ -475,7 +385,7 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Request a quote</h2>
-          <p class="hint">Send the basics and I’ll respond with a clear scope and price.</p>
+          <p class="hint">Send the basics and you’ll get a clear scope and price.</p>
         </div>
 
         <div class="grid2">
@@ -486,8 +396,8 @@
                 <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
               </div>
               <div>
-                <label for="company">Company (optional)</label>
-                <input id="company" name="company" autocomplete="organization" placeholder="Business name" />
+                <label for="company">Business / Home Office (optional)</label>
+                <input id="company" name="company" autocomplete="organization" placeholder="Business name or “Home office”" />
               </div>
               <div>
                 <label for="email">Email</label>
@@ -495,36 +405,26 @@
               </div>
               <div>
                 <label for="message">What do you need help with?</label>
-                <textarea id="message" name="message" placeholder="Devices/users count, what tools you use (Microsoft 365/Google/etc.), and what’s worrying you." required></textarea>
+                <textarea id="message" name="message" placeholder="Device count, number of users, email platform (Microsoft 365/Google/etc.), and whether you want home Wi-Fi/router help." required></textarea>
               </div>
-              <button class="cta" type="submit">Generate email draft</button>
-              <p class="note">This button opens your email app with a pre-filled message (no data is stored on this site).</p>
+              <button class="cta" type="submit">Generate email</button>
+              <p class="note">This opens your email app with a pre-filled message (no data is stored on this site).</p>
             </form>
           </div>
 
           <div class="card">
             <h3 style="margin:0 0 10px">Direct contact</h3>
-            <p class="hint" style="margin:0 0 16px">
-              Contact information for quotes and general inquiries.
-            </p>
+            <p class="hint" style="margin:0 0 16px">Email is the fastest way to get a quote.</p>
             <div style="display:grid; gap:10px">
-              <div class="stat"><b>Email</b>
-                <span>
-                  <a href="mailto:duboisitservices@gmail.com">
-                    duboisitservices@gmail.com
-                </a>
-                </span>
-              </div>
+              <div class="stat"><b>Email</b><span><a href="mailto:duboisitservices@gmail.com">duboisitservices@gmail.com</a></span></div>
               <div class="stat"><b>Phone</b><span><a href="tel:+17126355482">(712) 635-5482</a></span></div>
-              <div class="stat"><b>LinkedIn</b><span><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/christian-dubois-976b6b1a0/</a></span></div>
+              <div class="stat"><b>LinkedIn</b><span><a href="https://www.linkedin.com/in/christian-dubois-976b6b1a0/" target="_blank" rel="noopener noreferrer">View profile</a></span></div>
             </div>
 
             <div class="fineprint">
               <p style="margin:0 0 8px; font-weight:800">Scope statement</p>
               <p class="hint" style="margin:0">
-                Services focus on endpoint, identity, and backup hardening.
-                No guarantees of breach prevention are implied.
-                Complience certification and legal review are not provided.
+                Services focus on endpoint, identity, backup, and home/small-office network hardening. No guarantees of breach prevention are implied. Compliance certification and legal review are not provided.
               </p>
             </div>
           </div>
@@ -537,7 +437,7 @@
   <footer>
     <div class="wrap">
       <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
-        <div>© <span id="year"></span> DuBois IT Security Services</div>
+        <div>© <span id="year"></span> DuBois Home & Small Business Security</div>
         <div style="display:flex; gap:12px; flex-wrap:wrap">
           <a href="#services">Services</a>
           <a href="#pricing">Pricing</a>
@@ -551,7 +451,6 @@
   </footer>
 
   <script>
-    // Update year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Mailto generator (no backend required)
@@ -566,13 +465,12 @@
       const subject = encodeURIComponent(`Quote request${company ? ' - ' + company : ''}`);
       const body = encodeURIComponent(
         `Name: ${name}\n` +
-        `Company: ${company || 'N/A'}\n` +
+        `Business/Home Office: ${company || 'N/A'}\n` +
         `Reply-to: ${email}\n\n` +
         `Request:\n${message}\n\n` +
         `Preferred contact method/time:`
       );
 
-      // Replace this with your business email if different
       const to = 'duboisitservices@gmail.com';
       window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     });
